@@ -23,15 +23,15 @@ NAME = 'C\BACKUP\Loja.bak'
 
 --Backup do Log
 BACKUP LOG Loja
-TO DISK = 'C\BACKUP\Loja.bak'
+TO DISK = 'C\BACKUP\Loja_1.bak'
 WITH INIT, COMPRESSION, CHECKSUM,
-NAME = 'C\BACKUP\Loja.bak'
+NAME = 'C\BACKUP\Loja_1.bak'
 
 --Outro Backup do Log
 BACKUP LOG Loja
-TO DISK = 'C\BACKUP\Loja.bak'
+TO DISK = 'C\BACKUP\Loja_2.bak'
 WITH INIT, COMPRESSION, CHECKSUM,
-NAME = 'C\BACKUP\Loja.bak'
+NAME = 'C\BACKUP\Loja_2.bak'
 
 --Conferir o histórico de Backup que foi executado
 SELECT	database_name, name,backup_start_date, datediff(mi, backup_start_date, backup_finish_date) [tempo (min)],

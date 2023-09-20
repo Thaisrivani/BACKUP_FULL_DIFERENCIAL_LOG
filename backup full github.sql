@@ -11,27 +11,27 @@ ALTER DATABASE Loja SET RECOVERY FULL
 
 --Backup FULL 
  BACKUP DATABASE Loja
- TO DISK = 'C\BACKUP\Loja.bak'
+ TO DISK = 'C:\BACKUP\Loja_FULL.bak'
  WITH INIT, COMPRESSION, CHECKSUM, STATUS = 5, 
- NAME = 'C\BACKUP\Loja.bak'
+ NAME = 'C:\BACKUP\Loja_FULL.bak'
 
 --Backup Diferencial
 BACKUP DATABASE Loja
-TO DISK = 'C\BACKUP\Loja.bak'
+TO DISK = 'C:\BACKUP\Loja_DIFF.bak'
 WITH DIFFERENTIAL, INIT, COMPRESSION, CHECKSUM, STATS  = 5,
-NAME = 'C\BACKUP\Loja.bak'
+NAME = 'C:\BACKUP\Loja_DIFF.bak'
 
 --Backup do Log
 BACKUP LOG Loja
-TO DISK = 'C\BACKUP\Loja_1.bak'
+TO DISK = 'C:\BACKUP\Loja_Log1.bak'
 WITH INIT, COMPRESSION, CHECKSUM,
-NAME = 'C\BACKUP\Loja_1.bak'
+NAME = 'C:\BACKUP\Loja_Log1.bak'
 
 --Outro Backup do Log
 BACKUP LOG Loja
-TO DISK = 'C\BACKUP\Loja_2.bak'
+TO DISK = 'C:\BACKUP\Loja_Log2.bak'
 WITH INIT, COMPRESSION, CHECKSUM,
-NAME = 'C\BACKUP\Loja_2.bak'
+NAME =  'C:\BACKUP\Loja_Log2.bak'
 
 --Conferir o histórico de Backup que foi executado
 SELECT	database_name, name,backup_start_date, datediff(mi, backup_start_date, backup_finish_date) [tempo (min)],
